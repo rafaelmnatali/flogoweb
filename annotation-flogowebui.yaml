@@ -10,8 +10,8 @@ spec:
   rules:
   - host: natali-flogowebui.example.com
     http:
-	  paths:
-	    - path: /
-		  backend:
-		    serviceName: flogowebui-svc
-			servicePort: 3303
+      paths:
+        - path: /
+          backend:
+            serviceName: flogowebui-svc
+            servicePort: 3303
