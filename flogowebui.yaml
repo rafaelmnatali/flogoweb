@@ -6,17 +6,17 @@ spec:
   replicas: 2
   selector: 
     matchLabels:
-	  app: flogowebui
+      app: flogowebui
   template:
     metadata:
-	  labels:
-	    app: flogowebui
-	spec:
-	  containers:
-	  - name: flogowebui
-	    image: flogo/flogo-docker
-		ports:
-		- containerPort: 3303
+      labels:
+        app: flogowebui
+    spec:
+      containers:
+      - name: flogowebui
+        image: flogo/flogo-docker
+        ports:
+        - containerPort: 3303
 ---
 apiVersion: v1
 kind: Service
@@ -27,6 +27,6 @@ spec:
   - port: 3303
     targetPort: 3303
     protocol: TCP
-	name: http
+    name: http
   selector:
     app: flogowebui
