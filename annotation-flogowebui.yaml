@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: flogowebui-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  - hosts:
+    - natali-flogowebui.example.com
+  rules:
+  - host: natali-flogowebui.example.com
+    http:
+	  paths:
+	    - path: /
+		  backend:
+		    serviceName: flogowebui-svc
+			servicePort: 3303
